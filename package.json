@@ -1,0 +1,10 @@
+{
+  "name": "alex-receipt-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kuratiertes Beispiel-Repo fuer den ALEX Receipt-System v1 Nachweislauf. Echte CI, damit der erzeugte Receipt-Verdict VERIFIED statt PARTIAL ist.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
