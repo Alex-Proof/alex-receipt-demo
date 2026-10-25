@@ -17,3 +17,23 @@ test("rejects passed > total", () => {
 test("rejects non-integer input", () => {
   assert.throws(() => formatVerdictLine("VERIFIED", "review", 1.5, 6), RangeError);
 });
+
+test("rejects empty status", () => {
+  assert.throws(() => formatVerdictLine("", "review", 1, 2), TypeError);
+});
+
+test("rejects whitespace-only status", () => {
+  assert.throws(() => formatVerdictLine("   ", "review", 1, 2), TypeError);
+});
+
+test("rejects empty profile", () => {
+  assert.throws(() => formatVerdictLine("VERIFIED", "", 1, 2), TypeError);
+});
+
+test("rejects whitespace-only profile", () => {
+  assert.throws(() => formatVerdictLine("VERIFIED", "   ", 1, 2), TypeError);
+});
+
+test("rejects both status and profile empty", () => {
+  assert.throws(() => formatVerdictLine("", "", 1, 2), TypeError);
+});
